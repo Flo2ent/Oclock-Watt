@@ -29,3 +29,13 @@ h1,
 p {
   margin-bottom: 0;
 }
+
+section {
+  margin-top: 4.096rem;
+}
+
+h1:first-child,
+p:first-child,
+table:first-child {
+  margin-top: 0;
+}

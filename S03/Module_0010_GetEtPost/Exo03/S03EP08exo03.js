@@ -11,7 +11,7 @@ let guestId = 1;
 
 app.set("view engine", "ejs");
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Permet de recuperer les valeurs des requetes POST
 app.use(express.urlencoded({ extended: true }));
@@ -20,12 +20,12 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.render("index", {});
+  res.render("index", { manageCSS: false });
 });
 
 // GET : permet de parametrer la route vers la page login
 app.get("/manage", (req, res) => {
-  res.render("manage", { guests });
+  res.render("manage", { guests, manageCSS: true });
 });
 
 // POST
@@ -43,9 +43,10 @@ app.post("/manage", (req, res) => {
     //Recuperation de l'objet x (la personne) qui a comme ID celui passé en paramètre
     const personToRemove = guests.findIndex((x) => x.id == id);
     console.log(personToRemove);
+    // Supprimer la personne de la liste des invites ayant l'id
     guests.splice(personToRemove, 1);
   }
-  res.render("manage", { guests });
+  res.render("manage", { guests, manageCSS: true });
 });
 
 // Error handling middleware
