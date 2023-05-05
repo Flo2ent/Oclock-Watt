@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Jeu de la fourchette</h1>
+      <p>Devinez un nombre entre 1 et 10 compris</p>
+      <form method="post">
+        <div class="c-form-field">
+          <label for="number" class="c-form-field__label">Nombre</label>
+          <input type="number" name="number" id="number" min="1" max="10" required>
+        </div>
+        <input type="submit" value="Jouer">
+      </form>
+      <section>
+        <h2>Resultat</h2>
+        <p><%= result %></p>
+      </section>
+      <section>
+        <h2>Nombre d'essaies</h2>
+        <p><%= sentTrials %></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
