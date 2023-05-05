@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Gestion des personnes - Ceremonie</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Gestion des invites</h1>
+      <section>
+        <h2>Ajouter une personne</h2>
+        <form method="post" id="manageGuestsForm">
+          <div class="c-form-field">
+            <label for="firstName" class="c-form-field__label">Prenom</label>
+            <input type="text" name="firstName" id="firstName" inputmode="text">
+          </div>
+          <input type="submit" value="Ajouter">
+        </form>
+      </section>
+      <section>
+        <h2>Personnes invitees</h2>
+        <table>
+          <thead>
+            <th>Prenom</th>
+            <th>Enlever</th>
+          </thead>
+          <tbody>
+            <% guests.forEach(guest => { %>
+              <tr>
+                <td><%= guest.firstName %></td>
+                <td><button form="manageGuestsForm" type="submit" name="removePersonButton" value="<%= guest.id %>" id="removePersonButton">Enlever</button></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
