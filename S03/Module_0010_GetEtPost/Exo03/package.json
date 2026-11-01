@@ -12,6 +12,6 @@
   "dependencies": {
     "ejs": "^6.0.1",
     "express": "^5.2.0",
-    "minimatch": "^10.2.2"
+    "minimatch": "^11.0.1"
   }
 }
